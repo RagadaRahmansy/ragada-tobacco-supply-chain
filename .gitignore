@@ -1,0 +1,56 @@
+# ==============================================================================
+# Git Leak Prevention & Ignored Files - Ragada Tobacco SupplyChain OS
+# ==============================================================================
+
+# 1. CRITICAL: Environment Files, Secrets & Tokens (Zero Leak Policy)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa*
+*.p12
+*.pfx
+
+# 2. Database Dumps & Local Storage
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+tobacco_supply.db
+
+# 3. Node.js & Frontend Artifacts
+node_modules/
+dist/
+build/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 4. Python Environment & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 5. OS & IDE System Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
