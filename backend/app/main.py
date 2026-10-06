@@ -603,3 +603,9 @@ def get_stock_ledger(limit: int = 50, db: Session = Depends(get_db)):
             "notes": e.notes
         })
     return results
+
+# 9. Serve Prebuilt Frontend Static Files
+from fastapi.staticfiles import StaticFiles
+frontend_dist = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "frontend", "dist")
+if os.path.exists(frontend_dist):
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="static")
